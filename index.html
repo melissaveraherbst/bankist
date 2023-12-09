@@ -44,7 +44,7 @@
       <div>
         <p class="balance__label">Current Balance</p>
         <p class="balance__date">
-          As of <span class="date">05/03/2037</span>
+          As of <span class="date">01/01/1900</span>
         </p>
       </div>
       <p class="balance__value">0000€</p>
@@ -57,18 +57,18 @@
         <button class="btn btn__sort"><span>Sort</span><i class="fa-solid fa-up-down"></i></button>
       </div>
       <div class="movements">
-        <div class="movements__row">
-          <div class="movements__type movements__type--deposit">2 deposit</div>
+        <!-- <div class="movements__row">
+          <div class="movements__type movements__type--deposit">deposit</div>
           <div class="movements__date">3 days ago</div>
           <div class="movements__value">4 000&euro;</div>
         </div>
         <div class="movements__row">
           <div class="movements__type movements__type--withdrawal">
-            1 withdrawal
+            withdrawal
           </div>
           <div class="movements__date">24/01/2037</div>
           <div class="movements__value">-378&euro;</div>
-        </div>
+        </div> -->
       </div>
     </div>
 
@@ -97,7 +97,7 @@
         <form class="form form--transfer">
           <input type="text" class="form__input form__input--to" />
           <input type="number" class="form__input form__input--amount" />
-          <button class="form__btn form__btn--transfer">&rarr;</button>
+          <button class="form__btn form__btn--transfer"><i class="fa-solid fa-right-long"></i></button>
           <label class="form__label">Transfer To</label>
           <label class="form__label">Amount</label>
         </form>
@@ -108,7 +108,7 @@
         <h2>Request a Loan</h2>
         <form class="form form--loan">
           <input type="number" class="form__input form__input--loan-amount" />
-          <button class="form__btn form__btn--loan">&rarr;</button>
+          <button class="form__btn form__btn--loan"><i class="fa-solid fa-right-long"></i></button>
           <label class="form__label form__label--loan">Amount</label>
         </form>
       </div>
@@ -119,7 +119,7 @@
         <form class="form form--close">
           <input type="text" class="form__input form__input--user" />
           <input type="password" maxlength="6" class="form__input form__input--pin" />
-          <button class="form__btn form__btn--close">&rarr;</button>
+          <button class="form__btn form__btn--close"><i class="fa-solid fa-right-long"></i></button>
           <label class="form__label">Confirm User</label>
           <label class="form__label">Confirm PIN</label>
         </form>
@@ -129,7 +129,7 @@
     <!-- LOGOUT TIMER -->
     <p class="logout-timer">
       <i class="fa-regular fa-clock"></i>
-      You will be logged out in <span class="timer">05:00</span>
+      You will be logged out in <span class="timer">10:00</span>
     </p>
   </main>
 
