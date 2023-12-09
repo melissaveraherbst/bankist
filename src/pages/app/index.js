@@ -44,19 +44,22 @@ const account1 = {
 
 const account2 = {
 	owner: "Jessica Davis",
-	movements: [5000, 3400, -150, -790, -3210, -1000, 8500, -30],
+	movements: [5000, 3400, -150, -790, -3210],
 	interestRate: 1.5,
 	pin: 2222,
-
 	movementsDates: [
-		"2019-11-01T13:15:33.035Z",
-		"2019-11-30T09:48:16.867Z",
-		"2019-12-25T06:04:23.907Z",
 		"2020-01-25T14:18:46.235Z",
 		"2020-02-05T16:33:06.386Z",
 		"2020-04-10T14:43:26.374Z",
 		"2020-07-25T18:49:59.371Z",
 		"2020-07-26T12:01:20.894Z"
+	],
+	movementsDescriptions: [
+		"The Bannered Mare",
+		"Belethor's General Goods",
+		"The Drunken Huntsman",
+		"Bee and Barb",
+		"The Scorched Hammer"
 	],
 	currency: "EUR",
 	locale: "pt-PT" // de-DE
@@ -122,8 +125,8 @@ const displayUI = function () {
 	inputLoginPin.value = "";
 	inputLoginUsername.style.display = "none";
 	inputLoginPin.style.display = "none";
-	btnLogin.classList.add("login__display");
-	btnLogout.classList.remove("login__display");
+	btnLogin.classList.add("display__hidden");
+	btnLogout.classList.remove("display__hidden");
 };
 
 const hideUI = function () {
@@ -132,8 +135,8 @@ const hideUI = function () {
 	labelMessage.textContent = "Log in to continue...";
 	inputLoginUsername.style.display = "block";
 	inputLoginPin.style.display = "block";
-	btnLogin.classList.remove("login__display");
-	btnLogout.classList.add("login__display");
+	btnLogin.classList.remove("display__hidden");
+	btnLogout.classList.add("display__hidden");
 };
 
 // Timer for automatic user logout
@@ -187,13 +190,16 @@ const displayMovements = function (account) {
 	containerMovements.textContent = "";
 	account.movements.forEach((movement, i, arr) => {
 		const date = calcDates(new Date(account.movementsDates[i]), account.locale);
-		const type = movement > 0 ? "deposit" : "withdrawal";
+		const typeHTML = movement > 0 ? "+" : "-";
+		const typeClass = movement > 0 ? "deposit" : "withdrawal";
 		const html = `
 				<div class="movements__row">      
 				<div class="movements__index"><p>${i + 1}</p></div>
-				<div class="movements__type movements__type--${type}"><p>${type}</p></div>
-				<div class="movements__date">${date}</div>
-				<div class="movements__descriptions">${account.movementsDescriptions[i]}</div>
+				<div class="movements__type movements__type--${typeClass}"><p>${typeHTML}</p></div>
+				<div>
+					<div class="movements__date">${date}</div>
+					<div class="movements__description">${account.movementsDescriptions[i]}</div>
+				</div>
 				<div class="movements__value">${formatCurrency(account.locale, account.currency, movement)}</div>
 				</div>`;
 		containerMovements.insertAdjacentHTML("afterbegin", html);
@@ -288,14 +294,12 @@ btnLogin.addEventListener("click", function (e) {
 	});
 
 	if (!currentAccount) {
-		console.log("Incorrect Username or PIN");
-		labelMessage.textContent = "Incorrect Useraname or Password";
+		labelMessage.textContent = "Incorrect Username or Password";
 	}
 
 	if (currentAccount) {
 		if (currentAccount.pin !== Number(inputLoginPin.value)) {
-			console.log("Incorrect Username or PIN");
-			labelMessage.textContent = "Incorrect Useraname or Password";
+			labelMessage.textContent = "Incorrect Username or Password";
 		}
 
 		// Login was SUCCESSFUL
@@ -317,8 +321,10 @@ btnLogin.addEventListener("click", function (e) {
 				if (recipientAccount && recipientAccount !== currentAccount && amount > 0 && amount < currentAccount.balance) {
 					currentAccount.movements.push(amount * -1);
 					currentAccount.movementsDates.push(new Date());
+					currentAccount.movementsDescriptions.push("Cash Transfer")
 					recipientAccount.movements.push(amount);
 					recipientAccount.movementsDates.push(new Date());
+					recipientAccount.movementsDescriptions.push("Cash Transfer")
 				}
 				updateUI(currentAccount);
 				resetTimer();
