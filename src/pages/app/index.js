@@ -25,6 +25,19 @@ const account1 = {
 		"2020-12-23T07:42:02.383Z",
 		"2021-05-28T09:15:04.904Z",
 	],
+	movementsDescriptions: [
+		"Sleeping Giant Inn",
+		"Riverwoord Trader",
+		"The Bannered Mare",
+		"Belethor's General Goods",
+		"The Drunken Huntsman",
+		"Bee and Barb",
+		"The Scorched Hammer",
+		"Sleeping Giant Inn",
+		"Belethor's General Goods",
+		"The Winking Skeever",
+		"Angeline's Aromatics"
+	],
 	currency: "USD",
 	locale: "en-US" // de-DE
 };
@@ -180,7 +193,8 @@ const displayMovements = function (account) {
 				<div class="movements__index"><p>${i + 1}</p></div>
 				<div class="movements__type movements__type--${type}"><p>${type}</p></div>
 				<div class="movements__date">${date}</div>
-				  <div class="movements__value">${formatCurrency(account.locale, account.currency, movement)}</div>
+				<div class="movements__descriptions">${account.movementsDescriptions[i]}</div>
+				<div class="movements__value">${formatCurrency(account.locale, account.currency, movement)}</div>
 				</div>`;
 		containerMovements.insertAdjacentHTML("afterbegin", html);
 	});
