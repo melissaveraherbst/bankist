@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Bankist | Log In</title>
+
+  <link rel="shortcut icon" href="../../img/logo_originals/logo_original_light (2).png" type="image/x-icon">
+
+  <!-- google fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
+
+  <!-- fontawesome cdn https://cdnjs.com/libraries/font-awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <link rel="stylesheet" href="../../css/css_reset.css">
+
+  <link rel="stylesheet" href="../../css/app.css" />
+</head>
+
+<body>
+  <!-- TOP NAVIGATION -->
+  <nav>
+    <div class="logo">
+      <img src="../../img/logo_transparents/logo_transparent_light (1).png" alt="Logo" />
+      <img src="../../img/logo_transparents/logo_transparent_light (2).png" alt="Logo" />
+      <img src="../../img/logo_transparents/logo_transparent_light (3).png" alt="Logo" />
+    </div>
+    <form class="login">
+      <input type="text" placeholder="user" class="login__input login__input--user" />
+      <!-- In practice, use type="password" -->
+      <input type="password" placeholder="PIN" maxlength="4" class="login__input login__input--pin" />
+      <button class="btn btn__login">Log In</button>
+      <button class="btn btn__logout display__hidden">Log Out<i class="fa-solid fa-right-from-bracket"></i></button>
+    </form>
+  </nav>
+
+  <p class="message"></p>
+
+  <main class="app display__hidden">
+    <!-- BALANCE -->
+    <div class="balance">
+      <div>
+        <p class="balance__label">Current Balance</p>
+        <p class="balance__date">
+          As of <span class="date">01/01/1900</span>
+        </p>
+      </div>
+      <p class="balance__value">0000€</p>
+    </div>
+
+    <!-- MOVEMENTS -->
+    <div class="movements--container">
+      <div class="sort">
+        <p>Transaction History</p>
+        <button class="btn btn__sort"><span>Sort</span><i class="fa-solid fa-up-down"></i></button>
+      </div>
+      <div class="movements">
+        <div class="movements__row">
+          <div class="movements__index"><span>1</span></div>
+          <div class="movements__type movements__type--deposit">+</div>
+          <div>
+            <div class="movements__date">3 days ago</div>
+            <div class="movements__description">ABC</div>
+          </div>
+          <div class="movements__value">1 000 &euro;</div>
+        </div>
+        <div class="movements__row">
+          <div class="movements__index"><span>2</span></div>
+          <div class="movements__type movements__type--withdrawal">-</div>
+          <div>
+            <div class="movements__date">01/01/1900</div>
+            <div class="movements__description">XYZ</div>
+          </div>
+          <div class="movements__value">-500 &euro;</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- SUMMARY -->
+    <div class="summary">
+      <div class="summary--values">
+        <div>
+          <p class="summary__label">In</p>
+          <p class="summary__value summary__value--in">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">Out</p>
+          <p class="summary__value summary__value--out">0000€</p>
+        </div>
+        <div>
+          <p class="summary__label">Interest</p>
+          <p class="summary__value summary__value--interest">0000€</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- OPERATIONS -->
+    <div class="operations--container">
+      <!-- OPERATION: TRANSFERS -->
+      <div class="operation operation--transfer">
+        <h3>Transfer Money</h3>
+        <form class="form form--transfer">
+          <label class="form__label">Transfer To</label>
+          <input type="text" class="form__input form__input--to" />
+          <label class="form__label">Amount</label>
+          <input type="number" class="form__input form__input--amount" />
+          <button class="form__btn form__btn--transfer"><i class="fa-solid fa-right-long"></i></button>
+        </form>
+      </div>
+
+      <!-- OPERATION: LOAN -->
+      <div class="operation operation--loan">
+        <h3>Request a Loan</h3>
+        <form class="form form--loan">
+          <label class="form__label form__label--loan">Amount</label>
+          <input type="number" class="form__input form__input--loan-amount" />
+          <button class="form__btn form__btn--loan"><i class="fa-solid fa-right-long"></i></button>
+        </form>
+      </div>
+
+      <!-- OPERATION: CLOSE -->
+      <div class="operation operation--close">
+        <h3>Close Account</h3>
+        <form class="form form--close">
+          <label class="form__label">Confirm User</label>
+          <input type="text" class="form__input form__input--user" />
+          <label class="form__label">Confirm PIN</label>
+          <input type="password" maxlength="6" class="form__input form__input--pin" />
+          <button class="form__btn form__btn--close"><i class="fa-solid fa-right-long"></i></button>
+        </form>
+      </div>
+
+    </div>
+
+    <!-- LOGOUT TIMER -->
+    <p class="logout-timer">
+      <i class="fa-regular fa-clock"></i>
+      You will be logged out in <span class="timer">10:00</span>
+    </p>
+  </main>
+
+  <script src="./app.js"></script>
+</body>
+
+</html>

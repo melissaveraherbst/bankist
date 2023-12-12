@@ -1,0 +1,419 @@
+/*
+ * Use this CSS to learn some intersting techniques,
+ * in case you're wondering how I built the UI.
+ * Have fun! 😁
+ */
+
+:root {
+	--color-primary: hsl(122, 32%, 65%);
+	--color-secondary: hsl(156, 32%, 58%);
+	--color-primary-darker: hsl(162, 25%, 42%);
+	--color-secondary-darker: hsl(156, 38%, 48%);
+	--color-danger: hsl(352, 46%, 52%);
+	--color-text: hsl(0, 0%, 15%);
+	--color-text-muted: hsl(0, 0%, 55%);
+}
+
+body {
+	height: 100vh;
+	width: 100vw;
+	padding: 1rem 2.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	max-width: 1440px;
+	margin: 0 auto;
+	font-family: "Poppins", sans-serif;
+	color: var(--color-text);
+}
+
+nav {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 1rem 0;
+}
+
+.logo {
+	display: flex;
+	align-items: center;
+}
+
+.logo img:nth-child(1) {
+	display: none;
+}
+
+.logo img:nth-child(2) {
+	height: clamp(3rem, 10vw, 3.8rem);
+	margin-right: 1rem;
+}
+
+.logo img:nth-child(3) {
+	display: none;
+}
+
+.login {
+	display: flex;
+}
+
+.login__input {
+	width: clamp(10rem, 10vw, 20rem);
+	margin-right: 0.5rem;
+	border: 1px solid hsl(0, 0%, 85%);
+	border-radius: 8px;
+	text-align: center;
+	font-family: inherit;
+	color: inherit;
+}
+
+.login__input:focus {
+	outline: none;
+	border: 2px solid hsl(0, 0%, 55%);
+}
+
+.login__input::placeholder {
+	color: hsl(0, 0%, 85%);
+}
+
+.btn__login,
+.btn__logout {
+	width: 100%;
+	text-wrap: nowrap;
+	padding: 1rem 1.5rem;
+	min-width: 8rem;
+	border: none;
+	border-radius: 8px;
+	color: hsl(0, 0%, 98%);
+	cursor: pointer;
+}
+
+.btn__login {
+	background: none;
+	color: var(--color-primary-darker);
+	border: 1px solid var(--color-primary-darker);
+}
+
+.btn__login:hover {
+	outline: 1px solid var(--color-primary-darker);
+	outline-offset: 2px;
+}
+
+.btn__logout {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	background-color: transparent;
+	color: var(--color-text);
+	margin-right: -1rem;
+}
+
+.btn__logout:hover {
+	color: var(--color-primary-darker);
+}
+
+.message {
+	margin-top: 1rem;
+	font-weight: 500;
+}
+
+@media (max-width: 600px) {
+	nav {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.logo img:nth-child(1) {
+		display: block;
+		height: 6.5rem;
+		margin-bottom: 2rem;
+	}
+
+	.logo img:nth-child(2) {
+		display: none;
+	}
+
+	form {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 0.75rem;
+	}
+
+	.login__input {
+		width: 100%;
+		padding: 0.5rem 0rem;
+		margin: 0;
+	}
+
+	.btn__logout {
+		margin-right: 0;
+	}
+}
+
+@media (min-width: 1024px) {
+	.logo img:last-of-type {
+		display: block;
+		height: clamp(1.5rem, 8vw, 1.8rem);
+	}
+}
+
+/* MAIN */
+.app {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	grid-template-rows: repeat(3, auto) auto;
+	gap: 2rem;
+	width: 100%;
+	max-width: 1440px;
+	margin: 2rem 0;
+	transition: all 0.5s;
+}
+
+@media screen and (max-width: 600px) {
+	.app {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	}
+}
+
+.display__hidden {
+	display: none;
+}
+
+.balance {
+	display: flex;
+	justify-content: space-between;
+	grid-column: 1 / span 2;
+	margin-bottom: 1rem;
+}
+
+.balance__label {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+.balance__date {
+	margin-top: 0.5rem;
+	font-size: 0.8rem;
+	color: var(--color-text-muted);
+}
+
+.balance__value {
+	font-size: 1.2rem;
+	font-weight: 500;
+}
+
+/* MOVEMENTS */
+.sort {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 1rem;
+}
+
+.btn__sort {
+	border: none;
+	background-color: transparent;
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	cursor: pointer;
+}
+
+.btn__sort:hover {
+	color: var(--color-primary-darker);
+}
+
+.movements {
+	background-color: hsl(0, 0%, 98%);
+	max-height: 70vh;
+	overflow-y: scroll;
+}
+
+.movements__row {
+	padding-inline: 0 2rem;
+	padding-block: 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid hsl(0, 0%, 85%);
+}
+
+.movements__index {
+	text-transform: uppercase;
+	font-weight: 500;
+	font-size: 0.9rem;
+	width: 2rem;
+	text-align: center;
+	margin-right: 0.25rem;
+}
+
+.movements__type {
+	text-transform: uppercase;
+	font-size: 0.9rem;
+	text-align: center;
+	color: hsl(0, 0%, 98%);
+	border-radius: 50%;
+	height: 1.5rem;
+	line-height: 1.5rem;
+	aspect-ratio: 1;
+	margin-right: 1rem;
+}
+
+.movements__type--deposit {
+	color: var(--color-primary-darker);
+}
+
+.movements__type--withdrawal {
+	color: var(--color-danger);
+}
+
+.movements__date {
+	font-size: 0.8rem;
+	font-weight: 400;
+	color: var(--color-text-muted);
+}
+
+.movements__value {
+	margin-left: auto;
+	font-weight: 500;
+}
+
+@media screen and (max-width: 600px) {
+	.movements__type {
+		display: none;
+	}
+}
+
+/* SUMMARY */
+.summary {
+	grid-row: 3 / 6;
+}
+
+.summary--values {
+	display: flex;
+	justify-content: space-between;
+}
+
+.summary__label {
+	font-weight: 500;
+	text-transform: uppercase;
+	margin-right: 0.8rem;
+}
+
+.summary__value {
+	margin-right: 2rem;
+}
+
+.summary__value--in,
+.summary__value--interest {
+	color: var(--color-primary-darker);
+}
+
+.summary__value--out {
+	color: var(--color-danger);
+}
+
+/* OPERATIONS */
+.operation {
+	margin: 1rem 0;
+	border-radius: 16px;
+	padding: 1rem;
+	color: hsl(0, 0%, 98%);
+}
+
+.operation--transfer {
+	background-image: linear-gradient(to top left, var(--color-primary-darker) 35%, var(--color-primary) 100%);
+}
+
+.operation--loan {
+	background-image: linear-gradient(to top left, var(--color-secondary-darker) 15%, var(--color-primary-darker) 85%);
+}
+
+.operation--close {
+	border: 1px solid hsl(0, 0%, 85%);
+	color: var(--color-text);
+}
+
+h3 {
+	margin-bottom: 1.25rem;
+	font-weight: 600;
+}
+
+.form {
+	display: grid;
+	gap: 0.5rem;
+}
+
+.form.form--transfer,
+.form.form--close {
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: repeat(1fr, 3);
+}
+
+/* Exceptions for interest */
+.form.form--loan {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 0.5rem;
+}
+/* End exceptions */
+
+.form__input {
+	width: 100%;
+	border: none;
+	background-color: rgba(225, 225, 225, 0.75);
+	font-family: inherit;
+	color: var(--color-text);
+	padding: 0.5rem 1rem;
+	border: 1px solid hsl(0, 0%, 85%);
+	border-radius: 8px;
+}
+
+.form__input:focus {
+	outline: none;
+	background-color: hsla(0, 0%, 98%, 1);
+}
+
+.form__btn {
+	border: none;
+	border-radius: 8px;
+	background-color: hsl(0, 0%, 98%);
+	cursor: pointer;
+	padding: 0.5rem 1rem;
+	grid-column: span 2;
+}
+
+.form__btn:focus,
+.form__btn:hover {
+	outline: 1px solid hsl(0, 0%, 98%);
+	outline-offset: 2px;
+	background-color: hsl(0, 0%, 98%);
+	color: var(--color-primary-darker);
+}
+
+.form__btn--close {
+	background-color: hsl(0, 0%, 92%);
+}
+
+.form__btn--close:hover {
+	background-color: var(--color-danger);
+	outline: 1px solid var(--color-danger);
+	outline-offset: 2px;
+	color: hsl(0, 0%, 98%);
+}
+
+.logout-timer {
+	height: max-content;
+	text-align: end;
+	font-size: 0.8rem;
+	color: var(--color-text-muted);
+}
+
+.timer {
+	font-weight: 600;
+}
