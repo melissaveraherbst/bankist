@@ -5,146 +5,316 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-  <title>Bankist | Log In</title>
+  <link rel="shortcut icon" type="image/png" href="img/icon.png" />
 
-  <link rel="shortcut icon" href="./src/img/logo_originals/logo_original_light (2).png" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600&display=swap" rel="stylesheet" />
 
-  <!-- google fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap" rel="stylesheet" />
-
-  <!-- fontawesome cdn https://cdnjs.com/libraries/font-awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
     integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <link rel="stylesheet" href="./src/css/css_reset.css">
+  <link rel="stylesheet" href="/src/css/css_reset.css">
 
-  <link rel="stylesheet" href="./src/css/index.css" />
+  <link rel="stylesheet" href="/src/css/index.css" />
+
+  <title>Bankist | Home</title>
 </head>
 
 <body>
-  <!-- TOP NAVIGATION -->
-  <nav>
-    <div class="logo">
-      <img src="./src/img/logo_transparents/logo_transparent_light (1).png" alt="Logo" />
-      <img src="./src/img/logo_transparents/logo_transparent_light (2).png" alt="Logo" />
-      <img src="./src/img/logo_transparents/logo_transparent_light (3).png" alt="Logo" />
+  <header class="header">
+    <nav class="nav">
+      <div class="header__logo">
+        <img src="src/img/logo_transparents/logo_transparent_light (2).png" alt="logo" class="nav__logo" />
+        <img src="src/img/logo_transparents/logo_transparent_light (3).png" alt="logo" class="nav__logo" />
+      </div>
+      <div class="nav__list--container">
+        <ul class="nav__list">
+          <li class="nav__item">
+            <a class="nav__link" href="#section--1">Features</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--2">Operations</a>
+          </li>
+          <li class="nav__item">
+            <a class="nav__link" href="#section--3">Testimonials</a>
+          </li>
+        </ul>
+        <a class="nav__item nav__link" href="src/pages/app/app.html">Log In</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>
+        When
+        <!-- Green highlight effect -->
+        <span class="highlight">Banking</span>
+        meets<br />
+        <span class="highlight">Minimalist</span>
+      </h1>
+      <h4>A Simpler Banking Experience for a Simpler Life.</h4>
+      <span>
+        <button class="btn btn--show-modal">Sign Up</button>
+        <button class="btn btn--text btn--scroll-to">Learn more
+          <i class="fa-solid fa-arrow-down"></i>
+        </button>
+      </span>
     </div>
-    <form class="login">
-      <input type="text" placeholder="user" class="login__input login__input--user" />
-      <!-- In practice, use type="password" -->
-      <input type="password" placeholder="PIN" maxlength="4" class="login__input login__input--pin" />
-      <button class="btn btn__login">Log In</button>
-      <button class="btn btn__logout display__hidden">Log Out</button>
-    </form>
-  </nav>
+  </header>
 
-  <p class="message"></p>
+  <section class="section" id="section--1">
+    <div class="section__title">
+      <h2 class="section__description">Features</h2>
+      <h3 class="section__header">
+        Everything you need in a modern bank and more.
+      </h3>
+    </div>
 
-  <main class="app display__hidden">
-    <!-- BALANCE -->
-    <div class="balance">
-      <div>
-        <p class="balance__label">Current Balance</p>
-        <p class="balance__date">
-          As of <span class="date">01/01/1900</span>
+    <div class="features">
+      <img src="src/img/home/features/digital-lazy.png" data-src="src/img/home/features/digital.png" alt="Computer"
+        class="features__img lazy-img" />
+      <div class="features__feature">
+        <div class="features__icon">
+          <i class="fa-solid fa-desktop"></i>
+        </div>
+        <h5 class="features__header">100% Digital Bank</h5>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde alias
+          sint quos? Accusantium a fugiat porro reiciendis saepe quibusdam
+          debitis ducimus.
         </p>
       </div>
-      <p class="balance__value">0000€</p>
-    </div>
 
-    <!-- MOVEMENTS -->
-    <div class="movements--container">
-      <div class="sort">
-        <p>Transaction History</p>
-        <button class="btn btn__sort"><span>Sort</span><i class="fa-solid fa-up-down"></i></button>
+      <div class="features__feature">
+        <div class="features__icon">
+          <i class="fa-solid fa-money-bill-trend-up"></i>
+        </div>
+        <h5 class="features__header">See Your Money Grow</h5>
+        <p>
+          Nesciunt quos autem dolorum voluptates cum dolores dicta fuga
+          inventore ab? Nulla incidunt eius numquam sequi iste pariatur
+          quibusdam!
+        </p>
       </div>
-      <div class="movements">
-        <div class="movements__row">
-          <div class="movements__index"><span>1</span></div>
-          <div class="movements__type movements__type--deposit">+</div>
-          <div>
-            <div class="movements__date">3 days ago</div>
-            <div class="movements__description">ABC</div>
-          </div>
-          <div class="movements__value">1 000 &euro;</div>
+      <img src="src/img/home/features/grow-lazy.png" data-src="src/img/home/features/grow.png" alt="Plant"
+        class="features__img lazy-img" />
+      <img src="src/img/home/features/card-lazy.png" data-src="src/img/home/features/card.png" alt="Credit card"
+        class="features__img lazy-img" />
+      <div class="features__feature">
+        <div class="features__icon">
+          <i class="fa-regular fa-credit-card"></i>
         </div>
-        <div class="movements__row">
-          <div class="movements__index"><span>2</span></div>
-          <div class="movements__type movements__type--withdrawal">-</div>
-          <div>
-            <div class="movements__date">01/01/1900</div>
-            <div class="movements__description">XYZ</div>
-          </div>
-          <div class="movements__value">-500 &euro;</div>
-        </div>
+        <h5 class="features__header">Free Debit Card Included</h5>
+        <p>
+          Quasi, fugit in cumque cupiditate reprehenderit debitis animi enim
+          eveniet consequatur odit quam quos possimus assumenda dicta fuga
+          inventore ab.
+        </p>
       </div>
     </div>
+  </section>
 
-    <!-- SUMMARY -->
-    <div class="summary">
-      <div class="summary--values">
-        <div>
-          <p class="summary__label">In</p>
-          <p class="summary__value summary__value--in">0000€</p>
-        </div>
-        <div>
-          <p class="summary__label">Out</p>
-          <p class="summary__value summary__value--out">0000€</p>
-        </div>
-        <div>
-          <p class="summary__label">Interest</p>
-          <p class="summary__value summary__value--interest">0000€</p>
-        </div>
-      </div>
+  <!-- OPERATIONS/TABS -->
+  <section class="section" id="section--2">
+    <div class="section__title">
+      <h2 class="section__description">Operations</h2>
+      <h3 class="section__header">
+        Everything as simple as possible, but no simpler.
+      </h3>
     </div>
 
-    <!-- OPERATIONS -->
-    <div class="operations--container">
-      <!-- OPERATION: TRANSFERS -->
-      <div class="operation operation--transfer">
-        <h3>Transfer Money</h3>
-        <form class="form form--transfer">
-          <label class="form__label">Transfer To</label>
-          <input type="text" class="form__input form__input--to" />
-          <label class="form__label">Amount</label>
-          <input type="number" class="form__input form__input--amount" />
-          <button class="form__btn form__btn--transfer"><i class="fa-solid fa-right-long"></i></button>
-        </form>
+    <div class="operations">
+      <div class="operations__tab--container">
+        <button class="operations__tab operations__tab--1 operations__tab--active" data-tab="1">
+          <span>01</span>Instant Transfers
+        </button>
+        <button class="operations__tab operations__tab--2" data-tab="2">
+          <span>02</span>Instant Loans
+        </button>
+        <button class="operations__tab operations__tab--3" data-tab="3">
+          <span>03</span>Instant Closing
+        </button>
+      </div>
+      <div class="operations__content operations__content--1 operations__content--active">
+        <div class="operations__icon operations__icon--1">
+          <i class="fa-solid fa-money-bill-transfer"></i>
+        </div>
+        <h5 class="operations__header">
+          Tranfser money to anyone, instantly! No fees, no BS.
+        </h5>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+          ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </p>
       </div>
 
-      <!-- OPERATION: LOAN -->
-      <div class="operation operation--loan">
-        <h3>Request a Loan</h3>
-        <form class="form form--loan">
-          <label class="form__label form__label--loan">Amount</label>
-          <input type="number" class="form__input form__input--loan-amount" />
-          <button class="form__btn form__btn--loan"><i class="fa-solid fa-right-long"></i></button>
-        </form>
+      <div class="operations__content operations__content--2">
+        <div class="operations__icon operations__icon--2">
+          <i class="fa-solid fa-house"></i>
+        </div>
+        <h5 class="operations__header">
+          Buy a home or make your dreams come true, with instant loans.
+        </h5>
+        <p>
+          Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
+          cupidatat non proident, sunt in culpa qui officia deserunt mollit
+          anim id est laborum.
+        </p>
       </div>
-
-      <!-- OPERATION: CLOSE -->
-      <div class="operation operation--close">
-        <h3>Close Account</h3>
-        <form class="form form--close">
-          <label class="form__label">Confirm User</label>
-          <input type="text" class="form__input form__input--user" />
-          <label class="form__label">Confirm PIN</label>
-          <input type="password" maxlength="6" class="form__input form__input--pin" />
-          <button class="form__btn form__btn--close"><i class="fa-solid fa-right-long"></i></button>
-        </form>
+      <div class="operations__content operations__content--3">
+        <div class="operations__icon operations__icon--3">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </div>
+        <h5 class="operations__header">
+          No longer need your account? No problem! Close it instantly.
+        </h5>
+        <p>
+          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
+          officia deserunt mollit anim id est laborum. Ut enim ad minim
+          veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
+          ea commodo consequat.
+        </p>
       </div>
+    </div>
+  </section>
 
+  <section class="section" id="section--3">
+    <div class="section__title section__title--testimonials">
+      <h2 class="section__description">Not sure yet?</h2>
+      <h3 class="section__header">
+        Millions of Bankists are already making their lives simpler.
+      </h3>
     </div>
 
-    <!-- LOGOUT TIMER -->
-    <p class="logout-timer">
-      <i class="fa-regular fa-clock"></i>
-      You will be logged out in <span class="timer">10:00</span>
+    <!-- SLIDER -->
+    <div class="slider">
+      <!-- SLIDERS A: TESTIMONIALS -->
+      <div class="slide slide--1">
+        <div class="testimonial">
+          <h5 class="testimonial__header">Best financial decision ever!</h5>
+          <blockquote class="testimonial__text">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+            Accusantium quas quisquam non? Quas voluptate nulla minima
+            deleniti optio ullam nesciunt, numquam corporis et asperiores
+            laboriosam sunt, praesentium suscipit blanditiis. Necessitatibus
+            id alias reiciendis, perferendis facere pariatur dolore veniam
+            autem esse non voluptatem saepe provident nihil molestiae.
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="src/img/home/testimonials/user-1.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Aarav Lynn</h6>
+            <p class="testimonial__location">San Francisco, USA</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="slide slide--2">
+        <div class="testimonial">
+          <h5 class="testimonial__header">
+            The last step to becoming a complete minimalist
+          </h5>
+          <blockquote class="testimonial__text">
+            Quisquam itaque deserunt ullam, quia ea repellendus provident,
+            ducimus neque ipsam modi voluptatibus doloremque, corrupti
+            laborum. Incidunt numquam perferendis veritatis neque repellendus.
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Illo
+            deserunt exercitationem deleniti.
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="src/img/home/testimonials/user-2.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Miyah Miles</h6>
+            <p class="testimonial__location">London, UK</p>
+          </address>
+        </div>
+      </div>
+
+      <div class="slide slide--3">
+        <div class="testimonial">
+          <h5 class="testimonial__header">
+            Finally free from old-school banks
+          </h5>
+          <blockquote class="testimonial__text">
+            Debitis, nihil sit minus suscipit magni aperiam vel tenetur
+            incidunt commodi architecto numquam omnis nulla autem,
+            necessitatibus blanditiis modi similique quidem. Odio aliquam
+            culpa dicta beatae quod maiores ipsa minus consequatur error sunt,
+            deleniti saepe aliquid quos inventore sequi. Necessitatibus id
+            alias reiciendis, perferendis facere.
+          </blockquote>
+          <address class="testimonial__author">
+            <img src="src/img/home/testimonials/user-3.jpg" alt="" class="testimonial__photo" />
+            <h6 class="testimonial__name">Francis Gomes</h6>
+            <p class="testimonial__location">Lisbon, Portugal</p>
+          </address>
+        </div>
+      </div>
+
+      <button class="slider__btn slider__btn--left"><i class="fa-solid fa-arrow-left"></i></button>
+      <button class="slider__btn slider__btn--right"><i class="fa-solid fa-arrow-right"></i></button>
+      <div class="dots"></div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <ul class="footer__nav">
+      <li class="footer__item">
+        <a class="footer__link" href="#">About</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Pricing</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Terms of Use</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Privacy Policy</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Careers</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Blog</a>
+      </li>
+      <li class="footer__item">
+        <a class="footer__link" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <img src="src/img/logo_transparents/logo_transparent_dark (2).png" alt="Logo" class="footer__logo" />
+    <p class="footer__copyright">
+      Original content © Copyright by
+      <a class="footer__link twitter-link" target="_blank" href="https://twitter.com/jonasschmedtman">
+        Jonas Schmedtmann
+      </a>
+      , enriched by
+      <a class="footer__link" href="https://github.com/melissaveraherbst">
+        Melissa Vera Herbst
+      </a>.
+      Building upon Jonas's foundational work from a previous online course have meticulously refined and advanced this
+      project to reflect substantial improvements and innovations.
     </p>
-  </main>
+  </footer>
 
-  <script src="./src/pages/app/index.js"></script>
+  <div class="modal hidden">
+    <button class="btn--close-modal"><i class="fa-regular fa-circle-xmark"></i></button>
+    <h2 class="modal__header">
+      Open your bank account <br />
+      in just <span class="highlight">5 minutes</span>
+    </h2>
+    <form class="modal__form">
+      <label>First Name</label>
+      <input type="text" />
+      <label>Last Name</label>
+      <input type="text" />
+      <label>Email Address</label>
+      <input type="email" />
+      <button class="btn">Sign Up</button>
+    </form>
+  </div>
+  <div class="overlay hidden"></div>
+
+  <script src="./src/pages/home/index.js"></script>
 </body>
 
 </html>
