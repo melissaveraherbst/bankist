@@ -14,7 +14,7 @@ Bankist is a virtual banking application developed as part of an online course b
 Please be aware that this project is purely frontend-based and serves as a learning exercise in client-side development.
 
 ## Screenshots
-![1e5a11b0-43c5-42da-aba2-833462ddfaf9](https://github.com/melissaveraherbst/bankist/assets/84316275/f0636ffb-c914-444a-91c4-b95f517a3609)
-![6049cf6e-0cc8-466d-93b3-296d1d5bdf38](https://github.com/melissaveraherbst/bankist/assets/84316275/3b33c764-b782-4938-8e8b-c965472c5f7f)
 
+![1e5a11b0-43c5-42da-aba2-833462ddfaf9](https://github.com/melissaveraherbst/bankist/assets/84316275/1676565e-22f9-4440-994f-b6af2fd9a9ac)
+![6049cf6e-0cc8-466d-93b3-296d1d5bdf38](https://github.com/melissaveraherbst/bankist/assets/84316275/035c31d5-7a20-46e0-9ef4-cc60ac0d0195)
 
