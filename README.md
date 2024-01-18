@@ -1,17 +1,20 @@
-# Bankist: A Fictional Online Bank
+<div align=center>
 
-## Overview
+<img src="https://github.com/melissaveraherbst/bankist/assets/84316275/b8e3f88a-1629-477f-a43b-440a05fa2596" width=150px />
 
-Bankist is a virtual banking application developed as part of an online course by Jonas Schmedtmann. It is designed to showcase DOM manipulation and user interaction techniques. While it mimics the functionalities of an actual bank, please note that it does not possess a backend and lacks a genuine registration process.
+# Bankist &rarr; A Virtual Bank
 
-## Functionalities
+</div>
 
-**Login:** Access your account securely.  
-**Transfer Funds:** Send a value to another account within the system.  
-**Request for Loans:** Apply for loans based on predefined parameters.  
-**Close Account:** Delete your account from the system.
 
-Please be aware that this project is purely frontend-based and serves as a learning exercise in client-side development.
+Bankist is a simulated virtual bank application developed as part of an online course by Jonas Schmedtmann on Udemy. This project is purely frontend-based and serves as a learning exercise in client-side development, focusing on advanced DOM manipulation techniques.
+
+Overview
+The application consists of two main pages:
+
+1. **Home Page (home.html):** A single-page layout with four sections, including a captivating hero section, a services and features section, and a user testimonial section.
+
+2. **App Page (app.html):** This page is accessible after "logging in" through the home page and facilitates simple banking operations. Users can view balances, transfer money between other accounts, request loans, and review recent transactions.
 
 ## Screenshots
 
