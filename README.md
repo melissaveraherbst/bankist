@@ -2,7 +2,7 @@
 
 <img src="https://github.com/melissaveraherbst/bankist/assets/84316275/b8e3f88a-1629-477f-a43b-440a05fa2596" width=12% />
 
-# Bankist &rarr; A Virtual Bank
+# Bankist | A Virtual Bank
 
 </div>
 
