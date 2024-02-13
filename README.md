@@ -1,15 +1,15 @@
 <div align=center>
 
-<img src="https://github.com/melissaveraherbst/bankist/assets/84316275/b8e3f88a-1629-477f-a43b-440a05fa2596" width=150px />
+<img src="https://github.com/melissaveraherbst/bankist/assets/84316275/b8e3f88a-1629-477f-a43b-440a05fa2596" width=12% />
 
 # Bankist &rarr; A Virtual Bank
 
 </div>
 
-
 Bankist is a simulated virtual bank application developed as part of an online course by Jonas Schmedtmann on Udemy. This project is purely frontend-based and serves as a learning exercise in client-side development, focusing on advanced DOM manipulation techniques.
 
-Overview
+**Overview**  
+
 The application consists of two main pages:
 
 1. **Home Page (home.html):** A single-page layout with four sections, including a captivating hero section, a services and features section, and a user testimonial section.
